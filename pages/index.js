@@ -8,60 +8,68 @@ export default function Home() {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        background:
-          "radial-gradient(circle at top, #f5c2e7, #cba6f7, #89b4fa)",
         color: "#ffffff",
+        background: `
+          radial-gradient(circle at top, rgba(255,182,193,0.35), transparent 60%),
+          radial-gradient(circle at bottom, rgba(173,216,230,0.35), transparent 60%),
+          linear-gradient(180deg, #0b0b12, #141428)
+        `,
         fontFamily: "serif",
-        transition: "background 1s ease",
+        overflow: "hidden",
       }}
     >
-      <h1
-        style={{
-          fontSize: "3rem",
-          marginBottom: "0.75rem",
-          letterSpacing: "0.04em",
-        }}
-      >
-        Sruti&apos;s Designs
-      </h1>
-
+      {/* Soft floating glow layer */}
       <div
         style={{
-          display: "grid",
-          gap: "0.4rem",
-          opacity: 0.95,
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(circle at 30% 40%, rgba(255,182,193,0.25), transparent 40%), radial-gradient(circle at 70% 60%, rgba(186,85,211,0.25), transparent 45%)",
+          animation: "float 18s ease-in-out infinite",
+          zIndex: 0,
         }}
-      >
-        <div
+      />
+
+      {/* Content */}
+      <div style={{ position: "relative", zIndex: 1, padding: "2rem" }}>
+        <h1
           style={{
-            fontSize: "1.4rem",
-            fontWeight: 600,
+            fontSize: "3.2rem",
+            marginBottom: "1rem",
             letterSpacing: "0.02em",
           }}
         >
-          Design That Shapes Spaces
-        </div>
+          Sruti&apos;s Designs
+        </h1>
 
-        <div
+        <p
           style={{
-            fontSize: "1.05rem",
+            fontSize: "1.2rem",
             opacity: 0.9,
-            letterSpacing: "0.08em",
+            maxWidth: "520px",
+            lineHeight: 1.6,
           }}
         >
-          Immersive Visual Experiences
-        </div>
+          Design that shapes spaces.
+          <br />
+          <em>Immersive visual experiences in murals.</em>
+        </p>
       </div>
 
-      <p
-        style={{
-          marginTop: "1.5rem",
-          fontSize: "0.95rem",
-          opacity: 0.7,
-        }}
-      >
-        Website launching soon ✨
-      </p>
+      {/* Animation */}
+      <style jsx>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+      `}</style>
     </main>
   );
 }
