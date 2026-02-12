@@ -1,6 +1,15 @@
 export default function Home() {
   return (
-    <main className="page">
+    <<main
+  className="page"
+  style={{
+    backgroundImage: "url('/hero-bg.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    minHeight: "100vh",
+  }}
+>
       {/* Background layers */}
       <div className="bg" aria-hidden="true">
         <div className="bgGlow g1" />
